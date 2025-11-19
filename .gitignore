@@ -1,0 +1,22 @@
+﻿# build & deps
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# lockfiles (keep only one if needed on purpose)
+pnpm-lock.yaml
+package-lock.json
+
+# env / secrets
+.env
+.env.local
+.env.*.local
+.vercel
+.vercelignore
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
