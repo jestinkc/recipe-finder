@@ -145,9 +145,10 @@ export default function RecipeModal({
           {details?.instructions ? (
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-3">Instructions</h3>
-              <p className="text-foreground whitespace-pre-wrap text-sm leading-relaxed">
-                {details.instructions}
-              </p>
+              <div 
+                className="text-foreground text-sm leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: details.instructions }}
+              />
             </div>
           ) : (
             <div className="bg-muted p-4 rounded-lg text-center">
@@ -170,20 +171,15 @@ export default function RecipeModal({
               <div className="bg-muted p-4 rounded-lg">
                 <h4 className="font-semibold text-foreground mb-2">Recipe Source</h4>
                 {details?.sourceUrl ? (
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={details.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-primary underline wrap-break-word"
-                    >
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm text-muted-foreground wrap-break-word">
                       {details.sourceUrl}
-                    </a>
+                    </p>
                     <a
                       href={details.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-sm px-3 py-1 rounded bg-primary/10 text-primary hover:bg-primary/20"
+                      className="inline-block text-sm px-3 py-1 rounded bg-primary text-primary-foreground hover:bg-primary/90 w-fit"
                     >
                       Open source
                     </a>
